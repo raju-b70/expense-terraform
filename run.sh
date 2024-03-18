@@ -14,4 +14,4 @@ fi
 
 rm -rf .terraform.d
 terraform init -backend-config=env-$env/state.tfvars
-terraform $action -var-file=env-$env/main.tfvars -auto -approve
+terraform $action -var-file=env-$env/main.tfvars
