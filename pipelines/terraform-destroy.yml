@@ -1,6 +1,6 @@
 format_version: 10
 pipelines:
-  expense-tf-apply:
+  expense-tf-destroy:
     group: terraform
     materials:
       git-da613e5:
@@ -19,4 +19,4 @@ pipelines:
             terraform-apply:
               tasks:
                 - exec: {commands: terraform, arguments: ["init", "-backend-config=env-dev/state.tfvars], run_if: passed
-                - exec: {commands: terraform, arguments: ["apply", "-var.file=env-dev/main.tfvars, "-auto-approve" ], run_if: passed
+                - exec: {commands: terraform, arguments: ["destroy", "-var.file=env-dev/main.tfvars, "-auto-approve" ], run_if: passed
