@@ -6,9 +6,9 @@ resource "aws_instance" "instance" {
     name = var.component
   }
 }
+
 resource "null_resource" "ansible" {
   provisioner "remote-exec" {
-
     connection {
       type     = "ssh"
       user     = "var.ssh_user"
