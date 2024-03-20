@@ -1,10 +1,10 @@
 format_version: 10
 pipelines:
   expense-tf-destroy:
-    group: terraform
+    group: Terraform
     materials:
       git-da613e5:
-        git: https://github.com/raju-b70/expense-terraform.git
+        git: https://github.com/raghudevopsb78/expense-terraform.git
         shallow_clone: false
         auto_update: true
         branch: main
@@ -18,5 +18,5 @@ pipelines:
           jobs:
             terraform-apply:
               tasks:
-                - exec: {commands: terraform, arguments: ["init", "-backend-config=env-dev/state.tfvars], run_if: passed
-                - exec: {commands: terraform, arguments: ["destroy", "-var.file=env-dev/main.tfvars], run_if: passed
+                - exec: {command: terraform, arguments: [ "init", "-backend-config=env-dev/state.tfvars" ], run_if: passed}
+                - exec: {command: terraform, arguments: [ "destroy", "-var-file=env-dev/main.tfvars", "-auto-approve" ], run_if: passed}
