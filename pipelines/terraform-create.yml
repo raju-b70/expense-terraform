@@ -1,10 +1,10 @@
 format_version: 10
 pipelines:
   expense-tf-apply:
-    group: terraform
+    group: Terraform
     materials:
       git-da613e5:
-        git: https://github.com/raju-b70/expense-terraform.git
+        git: https://github.com/raju-b72/expense-terraform.git
         shallow_clone: false
         auto_update: true
         branch: main
@@ -18,5 +18,5 @@ pipelines:
           jobs:
             terraform-apply:
               tasks:
-                - exec: {commands: terraform, arguments: ["init", "-backend-config=env-dev/state.tfvars], run_if: passed
-                - exec: {commands: terraform, arguments: ["apply", "-var.file=env-dev/main.tfvars, "-auto-approve" ], run_if: passed
+                - exec: {command: terraform, arguments: [ "init", "-backend-config=env-dev/state.tfvars" ], run_if: passed}
+                - exec: {command: terraform, arguments: [ "apply", "-var-file=env-dev/main.tfvars", "-auto-approve" ], run_if: passed}
