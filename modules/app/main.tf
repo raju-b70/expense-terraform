@@ -26,7 +26,7 @@ resource "null_resource" "ansible" {
     ]
   }
 }
-
+#change commit
 resource "aws_route53_record" "record" {
   name    = "${var.component}-${var.env}"
   type    = "A"
