@@ -6,6 +6,7 @@
   tags = {
     Name = var.component
     monitor = "yes"
+    env = var.env
   }
 }
 
